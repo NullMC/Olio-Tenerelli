@@ -10,12 +10,17 @@ AOS.init({
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     const navbarBrand = document.querySelector('.navbar-brand');
+    const logo = document.getElementById('logo');
     if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-        navbarBrand.classList.add('scrolled');
+        navbar.classList.add('scrolled'), { behavior: 'smooth' };
+        navbarBrand.classList.add('scrolled'), { behavior: 'smooth' };
+        logo.classList.remove('d-inline-block'), { behavior: 'smooth' };
+        logo.classList.add('d-none'), { behavior: 'smooth' };
     } else {
-        navbar.classList.remove('scrolled');
-        navbarBrand.classList.remove('scrolled');
+        navbar.classList.remove('scrolled'), { behavior: 'smooth' };
+        navbarBrand.classList.remove('scrolled'), { behavior: 'smooth' };
+        logo.classList.remove('d-none'), { behavior: 'smooth' };
+        logo.classList.add('d-inline-block'), { behavior: 'smooth' };
     }
 });
 
